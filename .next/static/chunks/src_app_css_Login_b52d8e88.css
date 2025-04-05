@@ -1,0 +1,137 @@
+/* [project]/src/app/css/Login.css [app-client] (css) */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Figtree, sans-serif;
+  background: linear-gradient(#fce3ff, #ffe6e6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #ffccf2;
+  opacity: .4;
+  border-radius: 50%;
+  filter: blur(120px);
+  top: -150px;
+  left: -100px;
+  z-index: -1;
+}
+
+.blob2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #ffb3b3;
+  opacity: .4;
+  border-radius: 50%;
+  filter: blur(120px);
+  bottom: -150px;
+  right: -100px;
+  z-index: -1;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.loginBox {
+  background: #fff;
+  padding: 60px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px #0000001a;
+  text-align: center;
+  width: 500px;
+  min-height: 500px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.welcome {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  margin-top: 12px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.loginButton {
+  background-color: #000;
+  color: #fff;
+  padding: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-top: 20px;
+  transition: all .3s;
+}
+
+.loginButton:hover {
+  background-color: #333;
+}
+
+.socialIcons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.socialIcons img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.registerText {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #666;
+}
+
+.registerText a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registerText a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=src_app_css_Login_b52d8e88.css.map*/
