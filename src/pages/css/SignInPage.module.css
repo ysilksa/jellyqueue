@@ -21,15 +21,17 @@
   
 }
 
-/* Image container for all assets */
-.largeImageContainer {
-  width: 60%;
-  height: auto; 
+.leftHorizontalContainer {
+  display: flex; 
+  flex-direction: row;
 }
 
-.smallImageContainer {
-  width: 70%;
-  height: auto; 
+/* vertical container */
+.leftVerticalContainer {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
 }
 
   

@@ -19,7 +19,7 @@ const Login = () => {
 
         <div className={styles.loginBox}>
           <img
-            src="/images/jellyqueuelogo.png"
+            src="/pixelart/LargeBlueJellyfish.png"
             alt="JellyQueue Logo"
             className={styles.logo}
           />
