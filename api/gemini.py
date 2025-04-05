@@ -9,7 +9,7 @@ from google import genai
 
 # Load environment variables from .env file
 load_dotenv()
-api_key = "AIzaSyBAwonFpjgmc6VmFwVg53cfsWdbKTnJqeg"
+api_key = os.getenv('GOOGLE_API_KEY')
 
 client = genai.Client(api_key=api_key)
 
@@ -27,7 +27,7 @@ def generate():
     try:
         response = client.models.generate_content(model="gemini-2.0-flash", 
                                                   contents=prompt)
-        # print(response.text)
+        print(response.text)
         return jsonify({'response': response}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
