@@ -1,0 +1,123 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap');
+
+/* Ensure the body is the correct size */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Figtree', sans-serif;
+  background: #97D2F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; /* Ensure relative positioning for absolute blobs */
+}
+
+
+/* Ensure login container is relative */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative; /* Critical for absolute blobs */
+}
+
+/* Login box (larger and more prominent) */
+.loginBox {
+  background: white;
+  padding: 60px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 500px;
+  min-height: 500px;
+  position: relative; /* Ensure it stacks properly */
+  z-index: 2; /* Ensures it's on top of blobs */
+}
+
+
+/* Logo */
+.logo {
+  width: 140px; /* Slightly bigger logo */
+  margin-bottom: 15px;
+}
+
+/* Welcome text */
+.welcome {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.label {
+  display: block;
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  margin-top: 12px;
+}
+
+/* Input fields */
+.inputField {
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Login button */
+.loginButton {
+  background-color: black;
+  color: white;
+  padding: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.loginButton:hover {
+  background-color: #333;
+}
+
+/* Social icons */
+.socialIcons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.socialIcons img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* Register text */
+.registerText {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #666;
+}
+
+.registerText a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registerText a:hover {
+  text-decoration: underline;
+}
