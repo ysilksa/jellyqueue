@@ -10,7 +10,7 @@ function App() {
   }
 
   return (
-    <GoogleOAuthProvider clientId=" 274207504667-3mt33k26gif5aujrlrgvvtltr1go51ps.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="228031469497-enuqo7fe83a35elficfm5ip2apc5i3g1.apps.googleusercontent.com">
       <div className="App">
         <p>Jelly Queue</p>
         <GoogleLogin
