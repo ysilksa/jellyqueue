@@ -7,11 +7,8 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-content">
-        <h1 className="home-title">JellyQueue</h1>
+        <h1 className="home-title">Jelly Queue</h1>
         <h3 className="home-subtitle">Schedule your meeting with a single prompt!</h3>
-        <button className="home-btn" onClick={() => navigate("/login")}>
-          Find Your Match
-        </button>
       </div>
     </div>
   );
