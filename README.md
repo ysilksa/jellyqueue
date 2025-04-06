@@ -1,17 +1,17 @@
 # 🪼 JellyQueue.tech — Your Smart AI Meeting Scheduler!
 
-**Project**: JellyQueue.tech <br>
+**Project**: JellyQueue <br>
+**Registered Domain**: [fish.JellyQueue.tech](https://fish.jellyqueue.tech/) <br>
 **Collaborators**: Katie Jiang, Vicheda Narith, Maanvi Sarwadi, Isabella Yan <br>
 **Event**: WildHacks 2025 – Northwestern University's Largest Hackathon <br>
 
 Welcome to **JellyQueue**, a smart, AI-powered calendar scheduling web application built during **WildHacks 2025**. 🧠📆
 
-
 ## 🚀 What is JellyQueue?
 
-JellyQueue is an intelligent meeting scheduler that uses the **Gemini AI API** to scan multiple team members' **Google Calendars**, resolve conflicts, check for **weather conditions**, and auto-generate the most optimal meeting time and **Google Meet link** — all wrapped in a conversational AI chatbot experience.
+JellyQueue is an intelligent meeting scheduler that uses the **Gemini AI API** to scan multiple team members' **Google Calendars**, resolve conflicts, check for **weather conditions**, and auto-generate the most optimal meeting time and **Google Meet link**, all wrapped in a conversational AI chatbot experience.
 
-Whether you're working on a school project or organizing a club meeting, JellyQueue ensures everyone finds the perfect time slot — effortlessly.
+Whether you're working on a school project or organizing a club meeting, JellyQueue ensures everyone finds the perfect time slot effortlessly.
 
 ---
 
@@ -37,6 +37,7 @@ Whether you're working on a school project or organizing a club meeting, JellyQu
 
 ---
 
+![Diagram of API interactions](https://github.com/ysilksa/jellyqueue/blob/main/public/jellyqueue.png)
 
 ---
 
