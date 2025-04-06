@@ -1,45 +1,59 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import './Chatbot.css';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
-function Chatbot() {
-  const [message, setMessage] = useState('');
-  const [reply, setReply] = useState('');
+const Chatbot = () => {
+    const [value, setValue] = useState("");
+    const [error, setError] = useState("");
 
-  const sendMessage = async () => {
-    try {
-      const res = await fetch('http://localhost:5000/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: message }), // ✅ match backend key
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        // Assuming response = client.models.generate_content(...) returns a dict with .text
-        // But in your Python you returned: jsonify({'response': response}), 
-        // So you may need to adjust how you parse it.
-        setReply(data.response?.text || JSON.stringify(data.response));
-      } else {
-        setReply(`Error: ${data.error}`);
-      }
-    } catch (error) {
-      console.error(error);
-      setReply('An unexpected error occurred.');
+    const getResponse = async () => {
+        if (!value) {
+            setError("Please enter a question");
+            return;
+        }
+        try {
+            const options = {
+                method: 'POST',
+                body: JSON.stringify({
+                    message: value,
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+            const response = await fetch('http://localhost:5173/gemini', options);
+            const data = await response.text()
+            console.log(data);
+        }
+        catch (err) {
+            console.error(err);
+            setError("An error occurred while fetching the response");
+        }
     }
-  };
+    const clear = () => {
+        setValue("");
+        setError("");
+    }
 
-  return (
-    <div>
-      <h2>Gemini ChatBot</h2>
-      <input
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Ask me anything..."
-      />
-      <button onClick={sendMessage}>Send</button>
-      <p>Bot: {reply}</p>
-    </div>
-  );
+    return (
+        <div className="chatbot">
+            <section className ="search-section">
+                <div className="input-container">
+                    <input value={value} placeholder='Ask me anything about your schedule :)' onChange={(e) => setValue(e.target.value)}/>
+
+                    {!error && <button onClick={getResponse}>Send</button>}
+                    {error && <button onClick={clear}>Clear</button>}
+                </div>
+                {error && <p>{error}</p>}
+                <div className="search-result">
+                    <div key={""}>
+                        <p className="answer"></p>
+                    </div>
+                </div>
+                        
+            </section>
+
+        </div>
+    );
 }
-
 export default Chatbot;
