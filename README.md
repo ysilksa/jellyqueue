@@ -1,8 +1,8 @@
 # Jelly Queue! README
 
-Project: JellyQueue.tech
-Collaborators: Katie Jiang, Vicheda Narith, Maanvi Sarwadi, Isabella Yan
-Event: WildHacks 2025
+**Project**: JellyQueue.tech
+**Collaborators**: Katie Jiang, Vicheda Narith, Maanvi Sarwadi, Isabella Yan
+**Event**: WildHacks 2025
 
 ## Client Side
 
