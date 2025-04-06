@@ -1,8 +1,10 @@
-import { useState } from 'react';
+
+import { useState, React } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import Chatbot from './Chatbot';
 import './App.css';
+import { SignInPage } from './pages/SignInPage.jsx';
 
 function LoginPage() {
   const navigate = useNavigate();
