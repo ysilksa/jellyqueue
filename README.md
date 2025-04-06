@@ -1,4 +1,4 @@
-# JellyQueue.tech — Your Smart AI Meeting Scheduler!
+# 🪼 JellyQueue.tech — Your Smart AI Meeting Scheduler!
 
 **Project**: JellyQueue.tech <br>
 **Collaborators**: Katie Jiang, Vicheda Narith, Maanvi Sarwadi, Isabella Yan <br>
