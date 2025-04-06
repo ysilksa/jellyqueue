@@ -60,10 +60,10 @@ Whether you're working on a school project or organizing a club meeting, JellyQu
 ## 🧑‍💻 Running the App Locally
 
 ### 🖥️ Client Side (React + Vite)
-npm install
-npm run dev
+`npm install`
+`npm run dev`
 
 ## Serverless Side
-cd api
-pip install -r requirements.txt
-python app.py
+`cd api`
+`pip install -r requirements.txt`
+`python app.py`
