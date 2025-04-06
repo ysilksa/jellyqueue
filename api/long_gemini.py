@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
+from flask_cors import CORS
 import pytz
 import datetime
 import json
@@ -19,7 +20,7 @@ client = genai.Client(api_key=api_key)
 
 # Flask app
 app = Flask(__name__)
-
+CORS(app)
 #@app.route('/generate', methods=['POST'])
 
 def extract_meeting_details(prompt):
@@ -35,8 +36,10 @@ def extract_meeting_details(prompt):
                         - preferred_time_of_day (string: morning, afternoon, evening)
                         - summary (string)
                     """
-
-    response = client.model.generate_content(system_prompt + "\nUser Prompt: " + prompt)
+    
+    completed_prompt = system_prompt + "\nUser Prompt: " + prompt
+    response = client.models.generate_content(model="gemini-2.0-flash", 
+                                             contents=completed_prompt)
     text = response.text
 
     try:

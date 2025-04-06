@@ -33,7 +33,7 @@ def generate():
                                                   contents=prompt)
         #print(response.text)
         generated_content = response.text if hasattr(response, 'text') else 'No content generated'
-        print("THIS IS THE GENERATED CONTENT: ", generated_content)
+        #print("THIS IS THE GENERATED CONTENT: ", generated_content)
 
         return jsonify({'response': generated_content}), 200
     except Exception as e:
