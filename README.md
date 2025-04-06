@@ -4,6 +4,11 @@
 **Collaborators**: Katie Jiang, Vicheda Narith, Maanvi Sarwadi, Isabella Yan <br>
 **Event**: WildHacks 2025 <br>
 
+## 🔧 Tech Stacks
+💻 &nbsp; Python, React <br>
+🧰 &nbsp; AWS, EC2 <br>
+📦 &nbsp; ?? <br>
+
 ## Client Side
 
 ## Serverless Side
