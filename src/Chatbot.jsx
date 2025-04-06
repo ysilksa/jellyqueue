@@ -5,8 +5,8 @@ const Chatbot = () => {
     const [value, setValue] = useState(""); // Stores user input
     const [error, setError] = useState(""); // Stores error message
     const [response, setResponse] = useState(""); // Stores chatbot's response
+    const [messages, setMessages] = useState([]); // Stores conversation history
 
-    // Example availability data (you can modify or fetch this dynamically)
     const availability = [
         {
             date: "2025-04-07",
@@ -24,7 +24,6 @@ const Chatbot = () => {
         }
     ];
 
-    // Function to fetch response from backend
     const getResponse = async () => {
         if (!value) {
             setError("Please enter a question");
@@ -35,25 +34,28 @@ const Chatbot = () => {
             const options = {
                 method: 'POST',
                 body: JSON.stringify({
-                    prompt: value, // User's input prompt
-                    availability: availability, // Availability data
+                    prompt: value,
+                    availability: availability,
                 }),
                 headers: {
                     'Content-Type': 'application/json',
                 },
             };
 
-            // Fetch response from backend
             const res = await fetch('http://127.0.0.1:5000/generate', options);
-            console.log('Response status:', res.status);  // Check status code
-
             const data = await res.json();
-            console.log("Response data:", data);
 
             if (data.error) {
-                setError(data.error); // Set error message if there is an error
+                setError(data.error);
             } else {
-                setResponse(data.response); // Set the generated response from backend
+                setMessages(prev => [
+                    ...prev,
+                    { text: value, isUser: true },
+                    { text: data.response, isUser: false }
+                ]);
+                setValue(""); // ✅ Clear input field after send
+                setResponse(data.response);
+                setError("");
             }
 
         } catch (err) {
@@ -62,31 +64,40 @@ const Chatbot = () => {
         }
     };
 
-    // Clear the inputs and errors
     const clear = () => {
         setValue("");
         setError("");
         setResponse("");
+        setMessages([]);
     };
 
     return (
         <div className="chatbot">
             <section className="search-section">
+                <div className="chat-history">
+                    {messages.map((message, index) => (
+                        <div key={index} className={`message ${message.isUser ? 'user-message' : 'bot-message'}`}>
+                            <p>{message.text}</p>
+                        </div>
+                    ))}
+                </div>
+
                 <div className="input-container">
-                    <input 
-                        value={value} 
-                        placeholder='Ask me anything about your schedule :)' 
-                        onChange={(e) => setValue(e.target.value)} 
+                    <input
+                        value={value}
+                        placeholder='Ask me anything about your schedule :)'
+                        onChange={(e) => setValue(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                getResponse(); // ✅ Send on Enter
+                            }
+                        }}
                     />
                     {!error && <button onClick={getResponse}>Send</button>}
                     {error && <button onClick={clear}>Clear</button>}
                 </div>
+
                 {error && <p>{error}</p>}
-                <div className="search-result">
-                    <div key={"response"}>
-                        <p className="answer">{response}</p>
-                    </div>
-                </div>
             </section>
         </div>
     );
