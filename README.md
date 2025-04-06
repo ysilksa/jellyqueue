@@ -1,3 +1,13 @@
+# Jelly Queue! README
+
+Project: JellyQueue.tech
+Collaborators: Katie Jiang, Vicheda Narith, Maanvi Sarwadi, Isabella Yan
+Event: WildHacks 2025
+
+## Client Side
+
+## Serverless Side
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
