@@ -88,6 +88,24 @@ const Chatbot = () => {
     };
 
     return (
+        <div className="chatbot-container">
+            {/* Background visuals */}
+            <div className="background-layer">
+                {/* Left side of chatbot */}
+                <img src="/pixelart/LargeBlueJellyfish.png" className="bg-jellyfish top-left" />
+                <img src="/pixelart/LargePurpleJellyfish.png" className="bg-jellyfish middle-left" />
+                <img src="/pixelart/LargeBubbles.png" className="bg-bubbles top-left" />
+                <img src="/pixelart/LargeBubbles.png" className="bg-bubbles bottom-left" />
+                <img src="/pixelart/LargePurpleJellyfish.png" className="bg-jellyfish bottom-left" />
+
+                {/* Right side of chatbot */}
+                <img src="/pixelart/LargeBlueJellyfish.png" className="bg-jellyfish top-right" />
+                <img src="/pixelart/LargeBubbles.png" className="bg-bubbles top-right" />
+                <img src="/pixelart/LargePurpleJellyfish.png" className="bg-jellyfish middle-right" />
+                <img src="/pixelart/LargeBubbles.png" className="bg-bubbles bottom-right" />
+                <img src="/pixelart/LargeBlueJellyfish.png" className="bg-jellyfish bottom-right" />
+            </div>
+
         <div className="chatbot">
             <section className="search-section">
                 <div className="chat-history">
@@ -116,6 +134,8 @@ const Chatbot = () => {
                 {error && <p>{error}</p>}
             </section>
         </div>
+        </div>
+        
     );
 };
 
