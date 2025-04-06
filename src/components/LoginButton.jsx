@@ -4,7 +4,7 @@ import React from "react";
 import styles from './css/Login.module.css';
 // import { useRouter } from 'next/navigation';
 
-const Login = () => {
+export default function Login({ GoogleAuthentication })  {
   // const router = useRouter();
 
   //   const handleLogin = () => {
@@ -19,33 +19,14 @@ const Login = () => {
 
         <div className={styles.loginBox}>
           <img
-            src="/pixelart/LargeBlueJellyfish.png"
+            src="/pixelart/LargePurpleJellyfish.png"
             alt="JellyQueue Logo"
             className={styles.logo}
           />
           <h2 className={styles.welcome}>Welcome Back!</h2>
 
-          <div className={styles.loginForm}>
-            <label className={styles.label}>Username:</label>
-            <input
-              type="text"
-              className={styles.inputField}
-              placeholder="Enter your username"
-            />
-
-            <label className={styles.label}>Password:</label>
-            <input
-              type="password"
-              className={styles.inputField}
-              placeholder="Enter your password"
-            />
-
-            {/* <button className={styles.loginButton} onClick={handleLogin}>
-              Login
-            </button> */}
-            <button className={styles.loginButton}>
-              Login
-            </button>
+          <div className={styles.googleButtonContainer}>
+            { GoogleAuthentication }
           </div>
 
           <p className={styles.registerText}>
