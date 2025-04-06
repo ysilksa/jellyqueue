@@ -2,7 +2,7 @@
 
 **Project**: JellyQueue <br>
 **Registered Domain**: [fish.JellyQueue.tech](https://fish.jellyqueue.tech/) <br>
-**Collaborators**: Katie Jiang, Vicheda Narith, Maanvi Sarwadi, Isabella Yan <br>
+**Collaborators**: Vicheda Narith, Maanvi Sarwadi, Isabella Yan, Katie Jiang <br>
 **Event**: WildHacks 2025 – Northwestern University's Largest Hackathon <br>
 
 Welcome to **JellyQueue**, a smart, AI-powered calendar scheduling web application built during **WildHacks 2025**. 🧠📆
