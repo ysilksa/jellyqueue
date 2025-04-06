@@ -18,6 +18,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
+    "flask": "^0.2.10",
     "googleapis": "^148.0.0",
     "jwt-decode": "^4.0.0",
     "nodemon": "^3.1.9",
