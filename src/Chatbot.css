@@ -6,7 +6,7 @@
   align-items: center;
   height: 100vh;
   background: #E6F5FF;
-  font-family: "Montserrat", sans-serif;
+  font-family:'Figtree', sans-serif;
   padding: 16px;
 }
 
@@ -43,19 +43,23 @@
   margin-bottom: 8px;
   max-width: 75%;
 }
-
-.user-message {
-  background-color: #007bff;
-  color: white; /* ensures white text on blue */
-  align-self: flex-end;
-  margin-left: auto;
+.bot-message {
+  color: #444;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  max-width: 70%;
 }
 
-.bot-message {
-  background-color: #e5e5ea;
-  color: black; /* ensures black text on light grey */
-  align-self: flex-start;
-  margin-right: auto;
+.user-message {
+  color: #fff;
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  margin-left: auto;
+  max-width: 70%;
 }
 
 
