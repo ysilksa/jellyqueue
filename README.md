@@ -47,7 +47,7 @@ Whether you're working on a school project or organizing a club meeting, JellyQu
 - React (with Vite for fast development)  
 
 **Backend**:  
-- Python - Flask
+- Python - Flask (All required packages are in the requirements.txt file)
 - Google Calendar API for scheduling  
 - Gemini API for chatbot conversation & NLP  
 
