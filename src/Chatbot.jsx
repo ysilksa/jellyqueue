@@ -5,6 +5,7 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 const Chatbot = () => {
     const [value, setValue] = useState("");
     const [error, setError] = useState("");
+    const [response, setResponse] = useState("");
 
     const getResponse = async () => {
         if (!value) {
@@ -15,15 +16,24 @@ const Chatbot = () => {
             const options = {
                 method: 'POST',
                 body: JSON.stringify({
-                    message: value,
+                    prompt: value,
                 }),
                 headers: {
                     'Content-Type': 'application/json',
                 },
             }
-            const response = await fetch('http://localhost:5173/gemini', options);
-            const data = await response.text()
-            console.log(data);
+            const res = await fetch('http://127.0.0.1:5000/generate', options);
+            console.log('Response status:', res.status);  // Check status code
+            //const data = await response.text()
+            const data = await res.json();
+            console.log("Response data:", data);
+
+            if (data.error) {
+                setError(data.error);  // Set error message if there is an error
+            } else {
+                setResponse(data.response);  // Set the generated response from Gemini
+            }
+
         }
         catch (err) {
             console.error(err);
@@ -33,6 +43,7 @@ const Chatbot = () => {
     const clear = () => {
         setValue("");
         setError("");
+        setResponse("");
     }
 
     return (
@@ -46,8 +57,8 @@ const Chatbot = () => {
                 </div>
                 {error && <p>{error}</p>}
                 <div className="search-result">
-                    <div key={""}>
-                        <p className="answer"></p>
+                    <div key={"response"}>
+                        <p className="answer">{response}</p>
                     </div>
                 </div>
                         

@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
+from flask_cors import CORS
 import os
 import requests
 from google import genai
@@ -10,13 +11,16 @@ from google import genai
 # Load environment variables from .env file
 load_dotenv()
 api_key = os.getenv('GOOGLE_API_KEY')
+#print(api_key)
 
 client = genai.Client(api_key=api_key)
 
 # Flask app
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/generate', methods=['POST'])
+
 def generate():
     data = request.get_json()
     prompt = data.get('prompt')
@@ -27,8 +31,11 @@ def generate():
     try:
         response = client.models.generate_content(model="gemini-2.0-flash", 
                                                   contents=prompt)
-        print(response.text)
-        return jsonify({'response': response}), 200
+        #print(response.text)
+        generated_content = response.text if hasattr(response, 'text') else 'No content generated'
+        print("THIS IS THE GENERATED CONTENT: ", generated_content)
+
+        return jsonify({'response': generated_content}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
     
