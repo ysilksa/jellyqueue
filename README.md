@@ -63,7 +63,7 @@ Whether you're working on a school project or organizing a club meeting, JellyQu
 `npm install` <br>
 `npm run dev` <br>
 
-## Serverless Side
+### Serverless Side
 `cd api` <br>
 `pip install -r requirements.txt` <br>
 `python app.py` <br>
