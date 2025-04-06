@@ -1,11 +1,102 @@
 /* Chatbot.css */
 
+.chatbot-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; 
+}
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+
+/* Background jellyfish */
+.bg-jellyfish,
+.bg-bubbles {
+  position: absolute;
+  opacity: 0.6;
+  width: 150px;
+  pointer-events: none;
+}
+
+/* left side */
+.bg-jellyfish.top-left {
+  top: 25rem;
+  left: 5rem;
+  width: 10%;
+}
+
+.bg-jellyfish.middle-left {
+  top: 5rem;
+  left: 15rem;
+  width: 20%;
+}
+
+.bg-jellyfish.bottom-left {
+  top: 35rem;
+  left: 7rem;
+  width: 20%;
+}
+
+.bg-bubbles.top-left {
+  top: 2rem;
+  left: 5rem;
+  width: 10%;
+}
+
+.bg-bubbles.bottom-left {
+  bottom: 19rem;
+  left: 25rem;
+}
+
+
+/* right side */
+.bg-jellyfish.top-right {
+  top: 3rem; 
+  right: 15rem;
+  width: 20%;
+}
+
+.bg-jellyfish.middle-right {
+  top: 25rem; 
+  right: 10rem; 
+  width: 15%;
+}
+
+.bg-jellyfish.bottom-right {
+  bottom: 0rem; 
+  right: 0rem; 
+  width: 15%;
+}
+
+.bg-bubbles.top-right {
+  top: 15rem; 
+  right: 5rem; 
+  width: 10%; 
+}
+
+
+.bg-bubbles.bottom-right {
+  bottom: 2rem;
+  right: 20rem;
+  width: 15%;
+}
+
+
+/* start of chatbot styling */
 .chatbot {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #eef2f5, #fdfdfd);
+    background: linear-gradient(135deg, #eef2f5, #E6F5FF);
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 16px;
   }
