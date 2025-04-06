@@ -1,0 +1,30 @@
+{
+    "user": "Eve Adams",
+    "availability": [
+      {
+        "date": "2025-04-07",
+        "timeslots": [
+          { "start_time": "9:00 AM", "end_time": "10:00 AM" },
+          { "start_time": "10:30 AM", "end_time": "11:30 AM" },
+          { "start_time": "12:00 PM", "end_time": "1:00 PM" },
+          { "start_time": "2:00 PM", "end_time": "3:00 PM" }
+        ]
+      },
+      {
+        "date": "2025-04-08",
+        "timeslots": [
+          { "start_time": "9:00 AM", "end_time": "10:00 AM" },
+          { "start_time": "11:00 AM", "end_time": "12:00 PM" },
+          { "start_time": "1:00 PM", "end_time": "2:00 PM" }
+        ]
+      },
+      {
+        "date": "2025-04-09",
+        "timeslots": [
+          { "start_time": "9:00 AM", "end_time": "10:00 AM" },
+          { "start_time": "2:00 PM", "end_time": "3:00 PM" }
+        ]
+      }
+    ]
+  }
+  

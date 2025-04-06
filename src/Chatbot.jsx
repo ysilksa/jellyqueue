@@ -1,69 +1,85 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Chatbot.css';
+import availabilityData from './assets/testing1.json'; // Importing the JSON file
 
 const Chatbot = () => {
-    const [value, setValue] = useState("");
-    const [error, setError] = useState("");
-    const [messages, setMessages] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [value, setValue] = useState(""); // User input
+    const [error, setError] = useState(""); // Error message
+    const [messages, setMessages] = useState([]); // Message history
+    const [loading, setLoading] = useState(false); // Loading state
+    const [availability, setAvailability] = useState([]); // Store availability data
 
-    const availability = [ /* your current mock availability */ ];
+    // Log and set availability data properly
+    useEffect(() => {
+        console.log("Imported availability data:", availabilityData); // Verify if data is correctly imported
+        setAvailability(availabilityData.availability); // Set availability from the imported JSON
+    }, []);
+
+    // Function to format the availability data and return only the first available time
+    const formatAvailability = (availability) => {
+        for (let item of availability) {
+            if (item.timeslots.length > 0) {
+                const firstTimeslot = item.timeslots[0];
+                return `${item.date}: ${firstTimeslot.start_time} - ${firstTimeslot.end_time}`;
+            }
+        }
+        // Return just the message without extra text if no slots are available
+        return "No available time slots found.";
+    };
+
+    // Detect if the user's input is related to scheduling a meeting
+    const isSchedulingRequest = (input) => {
+        const schedulingKeywords = ["meeting", "schedule", "availability", "book", "appointment"];
+        return schedulingKeywords.some(keyword => input.toLowerCase().includes(keyword));
+    };
 
     const getResponse = async () => {
         if (!value) {
             setError("Please enter a question");
             return;
         }
-    
+
         setLoading(true);
         try {
             const options = {
                 method: 'POST',
                 body: JSON.stringify({
                     prompt: value,
-                    availability: availability,
                 }),
                 headers: {
                     'Content-Type': 'application/json',
                 },
             };
-    
+
             const res = await fetch('http://127.0.0.1:5000/generate', options);
-    
-            let data;
-            try {
-                data = await res.json(); // Try parsing response
-            } catch (jsonErr) {
-                throw new Error("Failed to parse JSON");
+            const data = await res.json();
+
+            if (data.error) {
+                setError(data.error);
+            } else {
+                let finalResponse = data.response;
+
+                // If the input is related to scheduling, return availability
+                if (isSchedulingRequest(value)) {
+                    finalResponse = `Here is an available time for your meeting:\n${formatAvailability(availability)}`;
+                }
+
+                setMessages(prev => [
+                    ...prev,
+                    { text: value, isUser: true },
+                    { text: finalResponse, isUser: false }
+                ]);
+
+                setValue(""); // Clear input field
+                setError(""); // Clear any previous errors
             }
-    
-            if (!res.ok) {
-                // Backend error with message
-                setError(data?.error || "Server error occurred");
-                return;
-            }
-    
-            // 👇 Clean up specific unwanted response pattern
-            let finalResponse = data.response;
-            if (finalResponse.includes("No availability found")) {
-                finalResponse = "No availability found.";
-            }
-    
-            setMessages(prev => [
-                ...prev,
-                { text: value, isUser: true },
-                { text: finalResponse, isUser: false }
-            ]);
-            setValue("");
-            setError("");
         } catch (err) {
-            console.error("Fetch error:", err);
+            console.error(err);
             setError("An error occurred while fetching the response");
         } finally {
             setLoading(false);
         }
     };
-    
 
     const clear = () => {
         setValue("");
