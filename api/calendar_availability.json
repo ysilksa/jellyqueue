@@ -1,0 +1,19 @@
+{
+  "user_id": "user123",
+  "availability": [
+    {
+      "date": "2025-04-06",
+      "timeslots": [
+        {"start_time": "09:00", "end_time": "11:00"},
+        {"start_time": "13:00", "end_time": "15:00"}
+      ]
+    },
+    {
+      "date": "2025-04-07",
+      "timeslots": [
+        {"start_time": "10:00", "end_time": "12:00"},
+        {"start_time": "14:00", "end_time": "16:00"}
+      ]
+    }
+  ]
+}
