@@ -82,6 +82,10 @@ body {
   transition: 0.3s;
 }
 
+.googleButtonContainer {
+  padding: 20px; 
+}
+
 .loginButton:hover {
   background-color: #333;
 }

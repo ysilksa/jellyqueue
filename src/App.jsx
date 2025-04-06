@@ -1,5 +1,5 @@
 
-import { useState, React } from 'react';
+import {  React } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import Chatbot from './Chatbot';
@@ -17,13 +17,17 @@ function LoginPage() {
 
   return (
     <div className="App">
-      <p>Jelly Queue</p>
-      <GoogleLogin
-        onSuccess={responseGoogle}
-        onError={() => {
+      <SignInPage
+       GoogleButton={
+          <GoogleLogin
+          onSuccess={responseGoogle}
+          onError={() => {
           console.log('Login Failed');
         }}
-      />
+    />
+  }
+/>
+
     </div>
   );
 }

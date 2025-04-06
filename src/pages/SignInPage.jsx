@@ -3,7 +3,7 @@ import styles from './css/SignInPage.module.css';
 import { Login } from '../components/LoginButton.jsx';
 import { SmallBlueJellyfish, LargeBlueJellyfish, SmallPurpleJellyfish, LargePurpleJellyfish, SmallBubbles, LargeBubbles } from '../components/PixelJellyfish.jsx';
 
-export default function SignInPage() {
+export default function SignInPage({ GoogleButton }) {
     return (
         <div className={styles.wholePageContainer}>
             {/* Left side with jellyfish imagery */}
@@ -28,7 +28,9 @@ export default function SignInPage() {
 
             {/* Right side with Login */}
             <div className={styles.rightSideContainer}>
-                <Login/>
+                <Login
+                GoogleAuthentication={GoogleButton}/>
+                
             </div>
         </div>
     );
