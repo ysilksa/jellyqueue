@@ -1,0 +1,10 @@
+/* Image container for all assets */
+.largeImageContainer {
+    width: 50%;
+    height: auto; 
+  }
+  
+  .smallImageContainer {
+    width: 40%;
+    height: auto; 
+  }

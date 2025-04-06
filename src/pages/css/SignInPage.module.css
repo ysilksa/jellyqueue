@@ -1,0 +1,47 @@
+/* index.css or global.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Container for the whole page */
+.wholePageContainer {
+  display: flex;  
+  width: 100vw; 
+  height: 100vh; 
+}
+
+/* Container for the left side graphics (bright blue) */
+.leftSideContainer {
+    width: 50vw; 
+    height: 100vh; 
+    background-color: #97D2F9;
+  
+}
+
+.leftHorizontalContainer {
+  display: flex; 
+  flex-direction: row;
+}
+
+/* vertical container */
+.leftVerticalContainer {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+}
+
+  
+  /* Container for the right side login (light blue) */
+  .rightSideContainer {
+    display: flex; 
+    width: 50vw; 
+    height: 100vh; 
+    background-color: #E6F5FF;
+    justify-content: center;
+    align-items: center;
+  
+  }
